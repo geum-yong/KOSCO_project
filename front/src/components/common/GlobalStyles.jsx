@@ -10,6 +10,9 @@ const globalStyles = createGlobalStyle`
     *{
         box-sizing:boerder-box;
     }
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+    }
     .a11y-hidden {
     position: absolute;
     width: 1px;

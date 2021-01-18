@@ -1,12 +1,11 @@
 import React from 'react';
-
 import AppWrapper from '../components/common/AppWrapper';
-import Form from '../components/login/Form';
+import LoginForm from '../components/login/LoginForm';
 
-const Login = () => {
+const Login = ({ history }) => {
   return (
     <AppWrapper>
-      <Form />
+      <LoginForm history={history} />
     </AppWrapper>
   );
 };

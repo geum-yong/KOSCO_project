@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AppWrapper from '../components/common/AppWrapper';
+import Header from '../components/common/Header';
+import CategoryList from '../components/home/CategoryList';
 
-const Home = () => {
+const Home = ({ history }) => {
+  useEffect(() => {
+    if (!sessionStorage.getItem('KOSCO_token')) history.push('/');
+  }, [history]);
+
   return (
-    <>
-      <h1>홈</h1>
-      <p>홈 화면입니다.</p>
-    </>
+    <AppWrapper>
+      <Header />
+      <CategoryList />
+    </AppWrapper>
   );
 };
 

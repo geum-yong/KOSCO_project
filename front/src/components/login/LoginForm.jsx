@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Input, Button } from 'antd';
@@ -47,7 +46,7 @@ const FormBox = styled.section`
   }
 `;
 
-const Form = ({ history }) => {
+const LoginForm = ({ history }) => {
   const [state, setState] = useState({
     userId: '',
     userPw: '',
@@ -64,7 +63,18 @@ const Form = ({ history }) => {
 
   const onSubmit = async () => {
     const { userId, userPw } = state;
-    const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/user/${state.userId}}`, {
+
+    if (!userId.trim()) {
+      setErrorVisible(true);
+      setErrorMsg('아이디를 입력해주세요.');
+    }
+
+    if (!userPw.trim()) {
+      setErrorVisible(true);
+      setErrorMsg('비밀번호를 입력해주세요.');
+    }
+
+    const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/user`, {
       userId,
       userPw,
     });
@@ -73,6 +83,8 @@ const Form = ({ history }) => {
       setErrorVisible(true);
       setErrorMsg(res.data.error);
     }
+
+    sessionStorage.setItem('KOSCO_token', res.data.token);
 
     history.push('/home');
   };
@@ -127,4 +139,4 @@ const Form = ({ history }) => {
   );
 };
 
-export default withRouter(Form);
+export default LoginForm;

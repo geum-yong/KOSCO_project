@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Inspection = () => {
+const Inspection = ({ history }) => {
+  useEffect(() => {
+    if (!sessionStorage.getItem('KOSCO_token')) history.push('/');
+  }, [history]);
+
   return (
     <>
       <h1>검사 계획</h1>

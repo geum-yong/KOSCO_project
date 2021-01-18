@@ -1,5 +1,8 @@
 const sql = require('mssql');
+const jwt = require('jsonwebtoken');
 const config = require('../../lib/configDB');
+
+require('dotenv').config();
 
 // 유저 찾기
 exports.find = async (req, res) => {
@@ -15,14 +18,38 @@ exports.find = async (req, res) => {
       return;
     }
 
-    req.session.login = {
-      userId: recordset[0].EmpNo,
-      userPw: recordset[0].EmpNm,
-    };
+    const token = jwt.sign(
+      {
+        userId: recordset[0].EmpNo,
+        userPw: recordset[0].EmpNm,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: '7d' }
+    );
 
-    res.send({ message: 'find success' });
+    res.send({ message: 'find success', token });
   } catch (e) {
     console.error(e);
     res.status(500).send();
+  }
+};
+
+// 유저 체크
+exports.check = (req, res) => {
+  try {
+    jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+    res.send({ message: 'check success' });
+  } catch (e) {
+    if (e.name === 'TokenExpiredError') {
+      return res.status(419).json({
+        code: 419,
+        message: 'fail check',
+      });
+    }
+
+    return res.send({
+      code: 401,
+      message: 'fail check',
+    });
   }
 };

@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Purchase = () => {
+const Purchase = ({ history }) => {
+  useEffect(() => {
+    if (!sessionStorage.getItem('KOSCO_token')) history.push('/');
+  }, [history]);
+
   return (
     <>
       <h1>구매 관리</h1>
