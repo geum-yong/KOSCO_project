@@ -67,11 +67,13 @@ const LoginForm = ({ history }) => {
     if (!userId.trim()) {
       setErrorVisible(true);
       setErrorMsg('아이디를 입력해주세요.');
+      return;
     }
 
     if (!userPw.trim()) {
       setErrorVisible(true);
       setErrorMsg('비밀번호를 입력해주세요.');
+      return;
     }
 
     const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/user`, {
@@ -82,6 +84,8 @@ const LoginForm = ({ history }) => {
     if (res.data.message === 'find fail') {
       setErrorVisible(true);
       setErrorMsg(res.data.error);
+
+      return;
     }
 
     sessionStorage.setItem('KOSCO_token', res.data.token);

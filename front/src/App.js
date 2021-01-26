@@ -16,6 +16,8 @@ import W1 from './pages/doc/W1';
 import W from './pages/doc/W';
 import B1 from './pages/doc/B1';
 import F from './pages/doc/F';
+import G from './pages/doc/G';
+import I from './pages/doc/I';
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
       <Route path='/doc/W' component={W} />
       <Route path='/doc/W1' component={W1} />
       <Route path='/doc/F' component={F} />
+      <Route path='/doc/G' component={G} />
+      <Route path='/doc/I' component={I} />
       <Route component={NotFound} />
     </Switch>
   );
