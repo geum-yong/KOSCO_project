@@ -19,7 +19,7 @@ const Header = () => {
     <HeaderWraper>
       <h1 className='a11y-hidden'>KOSCO</h1>
       <div className='header-logo-box'>
-        <Link to='/'>
+        <Link to='/home'>
           <img src={`${process.env.REACT_APP_SERVER_URL}/img/header-logo.png`} alt='kosco 로고' />
         </Link>
       </div>

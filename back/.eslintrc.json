@@ -15,6 +15,7 @@
     "no-console": "off",
     "linebreak-style": "off",
     "consistent-return": "off",
+    "no-nested-ternary": "off",
     "prettier/prettier": [
       "error",
       {

@@ -11,6 +11,7 @@ const globalStyles = createGlobalStyle`
         box-sizing:boerder-box;
     }
     body {
+        background: #eee;
         font-family: 'Noto Sans KR', sans-serif;
     }
     .a11y-hidden {

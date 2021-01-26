@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+import AppWrapper from '../components/common/AppWrapper';
+import Header from '../components/common/Header';
+import InspectionBox from '../components/inspection/InspectionBox';
 
 const Inspection = ({ history }) => {
   useEffect(() => {
@@ -6,10 +9,10 @@ const Inspection = ({ history }) => {
   }, [history]);
 
   return (
-    <>
-      <h1>검사 계획</h1>
-      <p>검사 계획 화면입니다.</p>
-    </>
+    <AppWrapper>
+      <Header />
+      <InspectionBox />
+    </AppWrapper>
   );
 };
 
