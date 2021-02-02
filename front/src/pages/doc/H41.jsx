@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import AppWrapper from '../../components/common/AppWrapper';
 import Header from '../../components/common/Header';
-import IForm from '../../components/doc/I/IForm';
+import H41Form from '../../components/doc/H4-1/H41Form';
 
-const I = ({ history }) => {
+const H41 = ({ history }) => {
   useEffect(() => {
     if (!sessionStorage.getItem('KOSCO_token')) history.push('/');
   }, [history]);
@@ -11,9 +11,9 @@ const I = ({ history }) => {
   return (
     <AppWrapper>
       <Header />
-      <IForm />
+      <H41Form />
     </AppWrapper>
   );
 };
 
-export default I;
+export default H41;

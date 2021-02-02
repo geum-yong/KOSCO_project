@@ -7,6 +7,7 @@ const InfoBox = styled.div`
   border: 2px solid #000;
 
   input {
+    width: 100%;
     border: 0;
   }
 

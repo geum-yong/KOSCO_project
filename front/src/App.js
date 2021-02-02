@@ -18,6 +18,18 @@ import B1 from './pages/doc/B1';
 import F from './pages/doc/F';
 import G from './pages/doc/G';
 import I from './pages/doc/I';
+import F2 from './pages/doc/F2';
+import OX2 from './pages/doc/OX2';
+import H1 from './pages/doc/H1';
+import H2 from './pages/doc/H2';
+import H3 from './pages/doc/H3';
+import H31 from './pages/doc/H31';
+import H4 from './pages/doc/H4';
+import H41 from './pages/doc/H41';
+import I1 from './pages/doc/I1';
+import H2A from './pages/doc/H2A';
+import P1 from './pages/doc/P1';
+import L1 from './pages/doc/L1';
 
 function App() {
   return (
@@ -35,8 +47,20 @@ function App() {
       <Route path='/doc/W' component={W} />
       <Route path='/doc/W1' component={W1} />
       <Route path='/doc/F' component={F} />
+      <Route path='/doc/F2' component={F2} />
       <Route path='/doc/G' component={G} />
       <Route path='/doc/I' component={I} />
+      <Route path='/doc/I-1' component={I1} />
+      <Route path='/doc/OX2' component={OX2} />
+      <Route path='/doc/H1' component={H1} />
+      <Route path='/doc/H2' component={H2} />
+      <Route path='/doc/H2-A' component={H2A} />
+      <Route path='/doc/H3' component={H3} />
+      <Route path='/doc/H3-1' component={H31} />
+      <Route path='/doc/H4' component={H4} />
+      <Route path='/doc/H4-1' component={H41} />
+      <Route path='/doc/P1' component={P1} />
+      <Route path='/doc/L1' component={L1} />
       <Route component={NotFound} />
     </Switch>
   );
