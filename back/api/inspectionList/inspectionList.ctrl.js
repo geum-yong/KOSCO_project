@@ -5,7 +5,11 @@ require('dotenv').config();
 
 // 검사 리스트 찾기
 exports.find = async (req, res) => {
-  const { startDate, endDate, process } = req.params;
+  const { process } = req.params;
+  let { startDate, endDate } = req.params;
+
+  startDate = startDate.split('-').join('');
+  endDate = endDate.split('-').join('');
 
   try {
     const pool = await sql.connect(config);
