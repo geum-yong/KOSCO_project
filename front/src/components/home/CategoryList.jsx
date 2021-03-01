@@ -29,10 +29,10 @@ const CategoryList = () => {
         <p className='category-title'>검사 계획</p>
         <p className='category-description'>금일 검사 목록을 확인할 수 있습니다.</p>
       </Link>
-      <Link to='/purchase'>
+      {/* <Link to='/purchase'>
         <p className='category-title'>구매 관리</p>
         <p className='category-description'>구매 목록을 확인할 수 있습니다.</p>
-      </Link>
+      </Link> */}
       <Link to='/'>
         <p className='category-title'>로그아웃</p>
         <p className='category-description'>로그인 화면으로 이동합니다.</p>

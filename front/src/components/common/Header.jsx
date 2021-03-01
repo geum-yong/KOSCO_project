@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const HeaderWraper = styled.header`
   > .header-logo-box {
-    margin: 0 auto;
+    margin: 50px auto;
     width: 200px;
     cursor: pointer;
 
